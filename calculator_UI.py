@@ -2,6 +2,67 @@
 import tkinter as tk
 from tkinter.constants import END
 from typing import Text
+
+def command_1():
+    display.insert(tk.END,'1')
+
+def command_2():
+    display.insert(tk.END,'2')
+
+def command_3():
+    display.insert(tk.END,'3')
+
+def command_4():
+    display.insert(tk.END,'4')
+
+def command_5():
+    display.insert(tk.END,'5')
+
+def command_6():
+    display.insert(tk.END,'6')
+
+def command_7():
+    display.insert(tk.END,'7')
+
+def command_8():
+    display.insert(tk.END,'8')
+
+def command_9():
+    display.insert(tk.END,'9')
+
+def command_bracket_l():
+    display.insert(tk.END,'(')
+
+def command_bracket_r():
+    display.insert(tk.END,')')
+
+def command_C():
+    display.delete(1.0,tk.END)
+
+def command_division():
+    display.insert(tk.END,'÷')
+
+def command_multi():
+    display.insert(tk.END,'x')
+
+def command_delete():
+    display.edit_undo()
+
+def command_sbustraction():
+    display.insert(tk.END,'-')
+
+def command_addion():
+    display.insert(tk.END,'+')
+
+def command_equal():
+    equation=display.get(1.0,tk.END)
+    
+def command_0():
+    display.insert(tk.END,'0')
+
+def command_dot():
+    display.insert(tk.END,'.')
+
 class Number:
     def __init__(self,master):
         keyboard=tk.Frame(master)
@@ -67,10 +128,6 @@ class Number:
         self.button_dot=tk.Button(keyboard,text='.',width=10,height=4,command=command_dot)
         self.button_dot.grid(row=5,column=4)
 
-
-
-
-
 root=tk.Tk(className='calculator')
 root.geometry('330x480')
 Number(root)
@@ -79,64 +136,5 @@ display.pack(side='top')
 root.mainloop()
 
 
-# %%
-def command_1():
-    display.insert(tk.END,'1')
 
-def command_2():
-    display.insert(tk.END,'2')
-
-def command_3():
-    display.insert(tk.END,'3')
-
-def command_4():
-    display.insert(tk.END,'4')
-
-def command_5():
-    display.insert(tk.END,'5')
-
-def command_6():
-    display.insert(tk.END,'6')
-
-def command_7():
-    display.insert(tk.END,'7')
-
-def command_8():
-    display.insert(tk.END,'8')
-
-def command_9():
-    display.insert(tk.END,'9')
-
-def command_bracket_l():
-    display.insert(tk.END,'(')
-
-def command_bracket_r():
-    display.insert(tk.END,')')
-
-def command_C():
-    display.delete(1.0,tk.END)
-
-def command_division():
-    display.insert(tk.END,'÷')
-
-def command_multi():
-    display.insert(tk.END,'x')
-
-def command_delete():
-    display.edit_undo()
-
-def command_sbustraction():
-    display.insert(tk.END,'-')
-
-def command_addion():
-    display.insert(tk.END,'+')
-
-def command_equal():
-    equation=display.get(1.0,tk.END)
-    
-def command_0():
-    display.insert(tk.END,'0')
-
-def command_dot():
-    display.insert(tk.END,'.')
 # %%

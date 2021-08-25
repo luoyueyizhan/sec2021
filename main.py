@@ -40,7 +40,7 @@ def command_C():
     display.delete(1.0,tk.END)
 
 def command_division():
-    display.insert(tk.END,'÷')
+    display.insert(tk.END,'/')
 
 def command_multi():
     display.insert(tk.END,'x')
@@ -66,14 +66,15 @@ def command_dot():
     display.insert(tk.END,'.')
 
 def command_history():
-    history_file=open("history.txt","w=r+")
+    history_file=open("history.txt","r+")
     strs=history_file.read()
     window_history=tk.Toplevel(root)
     window_history.geometry('300x200')
     window_history.title('history')
-    history_eqution=tk.Text(window_history,startline=DISABLED,height=10,undo=True)
+    history_eqution=tk.Text(window_history,height=10,undo=True)
     for i in strs:
         history_eqution.insert(tk.END,i)
+        print(i)
     history_eqution.pack(side='top')
     history_file.close()
 
@@ -266,7 +267,7 @@ class Calculator():
                 ans=self.zuihouchuli()
                 display.insert(tk.END,ans)
                 ans=display.get(1.0,tk.END)
-                history_file=open("history.txt","w")
+                history_file=open("history.txt","a")
                 history_file.write(ans)
                 history_file.close
                 break
@@ -274,16 +275,20 @@ class Calculator():
 class cal_menu:
     def __init__(self,master):
         menubar=tk.Menu(master)
+
         filemenu=tk.Menu(menubar,tearoff=0)
-        menubar.add_cascade(lable='File',menu=filemenu)
+        menubar.add_cascade(label='File',menu=filemenu)
         filemenu.add_command(label='New',command=command_C)
         filemenu.add_command(label='history',command=command_history)
         filemenu.add_separator()
         filemenu.add_command(label='Exit',command=master.quit)
+
         helpmenu=tk.Menu(menubar,tearoff=0)
-        menubar.add_cascade(label='help',menu=help)
+        menubar.add_cascade(label='help',menu=helpmenu)
         helpmenu.add_command(label='getback',command=command_delete)
-        helpmenu.add_cascade(label='readme',command=command_readme)
+        helpmenu.add_command(label='readme',command=command_readme)
+
+        master.config(menu=menubar)
 
         
 
