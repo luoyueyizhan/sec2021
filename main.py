@@ -83,10 +83,12 @@ def command_readme():
     window_help=tk.Toplevel(root)
     window_help.geometry('300x200')
     window_help.title('help')
-    label_readme=tk.Label(window_help,text='Readme')
-    label_email=tk.Label(window_help,text='luoyeyizhan@163.com')
+    label_readme=tk.Label(window_help,text='Readme获取方式')
+    label_email=tk.Label(window_help,text='邮箱：luoyeyizhan@163.com')
+    label_Git=tk.Label(window_help,text='GitHub地址：https://github.com/luoyueyizhan/sec2021.git')
     label_readme.pack()
     label_email.pack()
+    label_Git.pack()
 
 class Number:
     def __init__(self,master):

@@ -20,8 +20,10 @@
 ```markdown
 复制(题目一.py)文件
 ```
-3.通过VSCode打开题目一.py，编译并获得可执行文件
-4.通过history.txt保存历史记录
+文件可以通过[github]((https://github.com/luoyueyizhan/sec2021.git))下载
+
+3.通过VSCode打开 题目一.py，编译并获得可执行文件
+4.产生的history.txt用于保存历史记录
 
 ## 3.Running the tests
 ---
@@ -52,10 +54,11 @@
 ## 5.Contributing
 ---
 如果对项目有任何建议，欢迎与我们讨论。如果程序不能正常运行，可通过邮箱Email:<U201911986@hust.edu.cn>通知我们
+或者在[github]((https://github.com/luoyueyizhan/sec2021.git))上与我们留言
 
 ## 6.Versioning
 ---
-这仅仅是计算器的雏形
+这仅仅是计算器的雏形，第一个版本（1.0.0）
 ## 7.Authors
 ---
 U201911986 电气1905 刘霖一
@@ -72,4 +75,5 @@ Licensed under the [MIT License](./LICENSE).
 刘霖一：保存和查询历史记录，人机交互
 姜岚：四则运算与括号
 ## 11.GitHub address
+你可以通过[github](https://github.com/luoyueyizhan/sec2021.git)来下载文件和反应软件问题
 
