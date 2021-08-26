@@ -233,7 +233,7 @@ class Calculator():
         if '+' in self.formula_list1:
             result=0
             for number in self.formula_list1:
-                if number.isdigit() or '.' in number:
+                if number.isdigit() or '.' in number or '-' in number:
                     result+=decimal.Decimal(number)
             return(str(result))
         else:
@@ -299,5 +299,6 @@ display.pack(side='top')
 Number(root)
 cal_menu(root)
 root.mainloop()
+
 
 # %%
