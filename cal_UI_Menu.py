@@ -2,6 +2,17 @@ from cal_history import read_history
 import tkinter as tk
 
 class cal_menu:
+    """Menu.
+
+    The menu of the window.
+    
+    Args:
+        master(Tk):the window
+        menubar(Menu):the menu box
+        root(Tk):the window
+        filemenu(Menu):a smaller menubox on the menubar
+        helpmenu(Menu):a smaller menubox on the menubar
+    """
     def __init__(self,master):
         menubar=tk.Menu(master)
         self.root=master
@@ -20,9 +31,24 @@ class cal_menu:
         master.config(menu=menubar)
 
     def command_history(self):
-        read_history()
+        """
+
+        show the history.
+
+        """
+        read_history(self.root)
     
     def command_readme(self):
+        """
+
+        show a new window about some contact information of the devoloper.
+
+        Args:
+          window_help(Toplevel):a new window.
+          label_readme(Label):the address of readme.md.
+          label_email(Label):the email address of devoloper.
+          label_Git(Label):the github address of devoloper.
+        """
         window_help=tk.Toplevel(self.root)
         window_help.geometry('300x200')
         window_help.title('help')
@@ -34,7 +60,17 @@ class cal_menu:
         label_Git.pack()
 
     def command_C(self):
+        """
+
+        clear the text box.
+
+        """
         self.display.delete(1.0,tk.END)
 
     def command_delete(self):
+        """
+
+        get back to the last step.
+        
+        """
         self.display.edit_undo()
