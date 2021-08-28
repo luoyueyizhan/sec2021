@@ -4,6 +4,35 @@ from typing import Text
 from cal_cal import Calculator
 
 class Number:
+    """Number.
+
+    the number keyboard of the calculator.
+
+    Args:
+      master(Tk):the window.
+      keyboard(Frame):a box to put the buttons of number.
+      display(Text):the text box below the keyboard.
+      button_C(Button):a button used to clear the text box.
+      button_division(Button):a button used to input /.
+      button_maltiplication(Button):a button used to input x.
+      button_delete(Button):a button used to get back to last step.
+      button_1(Button):a button used to input 1.
+      button_2(Button):a button used to input 2.
+      button_3(Button):a button used to input 3.
+      button_4(Button):a button used to input 4.
+      button_5(Button):a button used to input 5.
+      button_6(Button):a button used to input 6.
+      button_7(Button):a button used to input 7.
+      button_8(Button):a button used to input 8.
+      button_9(Button):a button used to input 9.
+      button_0(Button):a button used to input 0.
+      button_bracket_r(Button):a button used to input (.
+      button_bracket_l(Button):a button used to input ).
+      button_substraction(Button): a button used to input -.
+      button_addtion(Button): a button used to input +
+      self.button_equal(Button): a button used to input = and order the calculator work.
+      button_dot(Button): a button used to input '.'.
+    """
     def __init__(self,master,display):
         keyboard=tk.Frame(master)
         keyboard.pack(side='bottom')
@@ -69,64 +98,164 @@ class Number:
         self.button_dot.grid(row=5,column=4)
 
     def command_1(self):
+        """
+
+        print '1' in the text box.
+
+        """
         self.display.insert(tk.END,'1')
 
     def command_2(self):
+        """
+
+        print '2' in the text box.
+
+        """
         self.display.insert(tk.END,'2')
 
     def command_3(self):
+        """
+
+        print '3' in the text box.
+
+        """
         self.display.insert(tk.END,'3')
 
     def command_4(self):
+        """
+
+        print '4' in the text box.
+
+        """
         self.display.insert(tk.END,'4')
 
     def command_5(self):
+        """
+
+        print '5' in the text box.
+
+        """
         self.display.insert(tk.END,'5')
 
     def command_6(self):
+        """
+
+        print '6' in the text box.
+
+        """
         self.display.insert(tk.END,'6')
 
     def command_7(self):
+        """
+
+        print '7' in the text box.
+
+        """
         self.display.insert(tk.END,'7')
 
     def command_8(self):
+        """
+
+        print '8' in the text box.
+
+        """
         self.display.insert(tk.END,'8')
 
     def command_9(self):
+        """
+
+        print '9' in the text box.
+
+        """
         self.display.insert(tk.END,'9')
 
     def command_bracket_l(self):
+        """
+
+        print '(' in the text box.
+
+        """
         self.display.insert(tk.END,'(')
 
     def command_bracket_r(self):
+        """
+
+        print ')' in the text box.
+
+        """
         self.display.insert(tk.END,')')
 
     def command_C(self):
+        """
+
+        clear text box.
+
+        """
         self.display.delete(1.0,tk.END)
 
     def command_division(self):
+        """
+
+        print '/' in the text box.
+
+        """
         self.display.insert(tk.END,'/')
 
     def command_multi(self):
+        """
+
+        print 'x' in the text box.
+
+        """
         self.display.insert(tk.END,'x')
 
     def command_delete(self):
+        """
+
+        get back to the last step.
+
+        """
         self.display.edit_undo()
 
     def command_sbustraction(self):
+        """
+
+        print '-' in the text box.
+
+        """
         self.display.insert(tk.END,'-')
 
     def command_addion(self):
+        """
+
+        print '+' in the text box.
+
+        """
         self.display.insert(tk.END,'+')
 
     def command_equal(self):
+        """
+
+        print '=' in the text box and order the calculator work.
+
+        """
         equation=self.display.get(1.0,tk.END)
         calculator=Calculator(equation,self.display)
         calculator.main()
     
     def command_0(self):
+        """
+
+        print '0' in the text box.
+
+        """
         self.display.insert(tk.END,'0')
 
     def command_dot(self):
+        """
+
+        print '.' in the text box.
+        
+        """
         self.display.insert(tk.END,'.')
 
