@@ -1,6 +1,15 @@
 import decimal
 import tkinter as tk
+from cal_history import write_history
 class Calculator():
+    """
+    
+    Compute the input
+
+    Args:
+        equation(str):formula
+        display(Any): Some function and values about the text of the window
+    """
     def __init__(self,equation,display):
         self.name=Calculator
         self.formula=equation
@@ -9,6 +18,11 @@ class Calculator():
         self.formula_list2=[]
     
     def zhuanhuan(self):
+        """
+        
+        Convert the input formula so that the number occupies only one space
+
+        """
         sum=''
         num=0
         while num<len(self.formula_list1):#num最大为列表长度减1，因为列表遍历从零开始
@@ -30,6 +44,11 @@ class Calculator():
                 self.formula_list1.remove(word)       
 
     def chengfa(self):
+        """
+        
+        Compute the multiplication in the formula
+        
+        """
         if 'x' in self.formula_list1:
             i=0
             while i<len(self.formula_list1):
@@ -44,6 +63,11 @@ class Calculator():
                     i=i+1
             
     def chufa(self):
+        """
+        
+        Calculate the division in the formula
+        
+        """
         if '/' in self.formula_list1:
             i=0
             #print(self.formula_list1)
@@ -59,6 +83,11 @@ class Calculator():
                     i=i+1
             
     def jianfa(self):
+        """
+        
+        Calculate the subtraction in the formula
+        
+        """
         if '-' in self.formula_list1:
             i=0
             while i<len(self.formula_list1):
@@ -72,7 +101,12 @@ class Calculator():
                 else:
                     i=i+1
 
-    def zuihouchuli(self):        
+    def zuihouchuli(self): 
+        """
+        
+        After multiplying, dividing, and subtracting the formula, add the rest of the formula
+        
+        """       
         self.chufa()
         self.chengfa()   
         self.jianfa()#此时只剩加法
@@ -86,6 +120,11 @@ class Calculator():
             return(str(self.formula_list1[0]))
 
     def main(self):
+        """
+        
+        Iterate through the list, processing all of the expressions in parentheses
+        
+        """
         self.formula_list1=list(self.formula)
         self.zhuanhuan()
         num=0
@@ -109,11 +148,6 @@ class Calculator():
                 else:
                     num+=1
             else:
-                self.display.insert(tk.END,'=')
                 ans=self.zuihouchuli()
-                self.display.insert(tk.END,ans)
-                ans=self.display.get(1.0,tk.END)
-                history_file=open("history.txt","a")
-                history_file.write(ans)
-                history_file.close
+                write_history(self.display,ans)
                 break
